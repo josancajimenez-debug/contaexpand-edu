@@ -1,0 +1,13 @@
+# No publicar en el repositorio (privado o pesado)
+BIBLIOGRAFÍA/
+BIBLIOGRAFIA/
+Prompt final.docx
+*_backup_*.html
+ContaExpand_Edu_backup_*.html
+
+# Carpetas de herramientas / sistema
+.agents/
+.claude/
+Thumbs.db
+desktop.ini
+*.tmp
