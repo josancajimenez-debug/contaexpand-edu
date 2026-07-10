@@ -738,6 +738,9 @@
 
     .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .table-wrap .journal { min-width: 420px; }
+    .manual-list { margin: 4px 0 0; padding-left: 20px; }
+    .manual-list li { margin-bottom: 9px; line-height: 1.55; }
+    .panel-actions { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; }
 
     .hero {
       position: relative;
@@ -934,6 +937,7 @@
           <button id="goCasos">Casos resueltos</button>
           <button id="goReport">Reporte</button>
           <button id="goBibliography">Bibliografia</button>
+          <button id="goManual">Manual</button>
         </div>
       </div>
 
@@ -943,6 +947,7 @@
       <section id="casosScreen" class="screen"></section>
       <section id="reportScreen" class="screen"></section>
       <section id="bibliographyScreen" class="screen"></section>
+      <section id="manualScreen" class="screen"></section>
     </main>
     <div class="backdrop" id="backdrop"></div>
   </div>
@@ -1983,7 +1988,7 @@
 
     function setScreen(screen) {
       activeScreen = screen;
-      ["dashboard", "unit", "glossary", "casos", "report", "bibliography"].forEach(name => {
+      ["dashboard", "unit", "glossary", "casos", "report", "bibliography", "manual"].forEach(name => {
         $(`${name}Screen`).classList.toggle("active", name === screen);
       });
       render();
@@ -3036,6 +3041,123 @@
       `;
     }
 
+    function renderManual() {
+      $("screenTitle").textContent = "Manual de usuario";
+      $("screenSubtitle").textContent = "Guia paso a paso para estudiantes y docentes.";
+      $("manualScreen").innerHTML = `
+        <div class="panel">
+          <div class="panel-head"><h3>1. Que es ContaExpand Edu</h3><span class="badge">Vision general</span></div>
+          <div class="panel-body">
+            <p class="info">Herramienta educativa interactiva para el curso de Contabilidad Avanzada. Cubre cuatro unidades bajo NIIF completas: expansion empresarial, agencias y sucursales, inversion en subsidiarias y empresas asociadas. Funciona sin internet y guarda tu avance en el propio navegador (localStorage).</p>
+            <div class="unit-grid">
+              <div class="mini"><h4>Unidad 1</h4><p>Expansion de Empresas: distribuidores internos/externos, estados por canal y control contable.</p></div>
+              <div class="mini"><h4>Unidad 2</h4><p>Agencias y Sucursales: casa central, cuentas reciprocas y estados combinados.</p></div>
+              <div class="mini"><h4>Unidad 3</h4><p>Inversion en Subsidiarias: control, metodo del costo, participacion y consolidacion.</p></div>
+              <div class="mini"><h4>Unidad 4</h4><p>Empresas Asociadas: influencia significativa y metodo de participacion.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>2. Primeros pasos</h3><span class="badge">Inicio</span></div>
+          <div class="panel-body">
+            <ol class="manual-list">
+              <li><strong>Escribe tu nombre</strong> en el campo de perfil (barra lateral) y pulsa <em>Guardar perfil</em>. Tu avance queda ligado a ese nombre.</li>
+              <li><strong>Deja el rol en Estudiante.</strong> Los roles Docente y Administrador piden clave (ver seccion 7).</li>
+              <li>Desde el <strong>Panel</strong>, pulsa <em>Iniciemos</em> (o <em>Repasar unidades</em>) para entrar a la unidad sugerida.</li>
+              <li>Tu progreso se guarda solo; puedes cerrar y volver luego en el mismo equipo y navegador.</li>
+            </ol>
+            <p class="warning">El avance se guarda en el navegador del equipo. Si cambias de computadora o borras los datos del navegador, empiezas de cero. Usa <em>Reporte &rarr; Exportar</em> para respaldar.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>3. Las secciones del menu superior</h3><span class="badge">Navegacion</span></div>
+          <div class="panel-body">
+            <div class="unit-grid">
+              <div class="mini"><h4>Panel</h4><p>Resumen de tu avance, unidad sugerida y accesos rapidos.</p></div>
+              <div class="mini"><h4>Glosario</h4><p>Terminos clave con buscador; cada termino enlaza a su unidad.</p></div>
+              <div class="mini"><h4>Casos resueltos</h4><p>Ejercicios completos (enunciado, datos, asientos, solucion y fundamento NIIF). Filtrables por unidad.</p></div>
+              <div class="mini"><h4>Reporte</h4><p>Detalle de avance, autoevaluaciones y gestion de perfiles (renombrar, reiniciar, eliminar) y exportacion.</p></div>
+              <div class="mini"><h4>Bibliografia</h4><p>Fuentes locales aportadas y marco normativo NIIF.</p></div>
+              <div class="mini"><h4>Manual</h4><p>Esta guia de uso.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>4. Dentro de una unidad</h3><span class="badge">6 pestanas</span></div>
+          <div class="panel-body">
+            <ol class="manual-list">
+              <li><strong>Contenido:</strong> desarrollo academico. Marca cada <em>concepto clave</em> conforme lo lees (asi se acredita el avance).</li>
+              <li><strong>Ejemplo:</strong> caso guiado con asientos y presentacion segun NIIF 18. Abrelo para acreditarlo.</li>
+              <li><strong>Ejercicios:</strong> practica en tres niveles (basico, intermedio, avanzado).</li>
+              <li><strong>Simulador:</strong> ingresa datos y calcula; muestra resultados y la presentacion por categorias NIIF 18.</li>
+              <li><strong>Autoevaluacion:</strong> preguntas de opcion multiple con retroalimentacion.</li>
+              <li><strong>Notas:</strong> apuntes personales que se guardan con tu perfil.</li>
+            </ol>
+            <p class="info">Usa los botones <strong>Anterior / Siguiente</strong> para moverte entre unidades, y <strong>Imprimir</strong> para generar PDF del ejemplo y el simulador de la unidad.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>5. Como se calcula tu avance</h3><span class="badge">100 % por unidad</span></div>
+          <div class="panel-body">
+            <p class="info">Cada unidad llega a 100 % combinando actividades reales. Los pesos son:</p>
+            <div class="table-wrap">
+              <table class="journal">
+                <thead><tr><th>Actividad</th><th>Peso</th></tr></thead>
+                <tbody>
+                  ${ACTIVITY_ITEMS.map(i => `<tr><td>${i.label}</td><td>${i.weight}%</td></tr>`).join("")}
+                </tbody>
+              </table>
+            </div>
+            <p class="warning">Los conceptos suman su peso solo cuando marcas <strong>todos</strong> los conceptos clave de la unidad; abrir la pestana no otorga avance por si solo.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>6. Reporte y respaldo de datos</h3><span class="badge">Perfiles</span></div>
+          <div class="panel-body">
+            <ol class="manual-list">
+              <li>En <strong>Reporte</strong> ves tu avance por unidad y tus respuestas de autoevaluacion.</li>
+              <li>Desde alli puedes <strong>renombrar, reiniciar o eliminar</strong> un perfil.</li>
+              <li><strong>Exportar</strong> descarga tus datos (JSON/CSV) para respaldo o para entregar al docente.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>7. Roles Docente y Administrador</h3><span class="badge">Acceso con clave</span></div>
+          <div class="panel-body">
+            <ol class="manual-list">
+              <li>En la barra lateral cambia el <strong>rol</strong> a Docente o Administrador; se solicitara una <strong>clave</strong> (la misma para ambos).</li>
+              <li>El rol elevado da acceso a la vista de <strong>reporte grupal</strong> y exportaciones de grupo.</li>
+              <li>La clave puede cambiarse desde la opcion correspondiente cuando el rol esta activo.</li>
+              <li>Por seguridad, al recargar la pagina el rol vuelve a Estudiante hasta ingresar la clave otra vez.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>8. Preguntas frecuentes</h3><span class="badge">Ayuda</span></div>
+          <div class="panel-body">
+            <div class="unit-grid">
+              <div class="mini"><h4>Perdi mi avance</h4><p>Se guarda por navegador y equipo. Si limpiaste datos o cambiaste de equipo, restaura desde un respaldo exportado.</p></div>
+              <div class="mini"><h4>No suma el avance</h4><p>Verifica que marcaste todos los conceptos, abriste el ejemplo, hiciste los ejercicios, el simulador y la autoevaluacion.</p></div>
+              <div class="mini"><h4>Puedo usarlo sin internet</h4><p>Si. Es un unico archivo HTML; funciona abriendolo directamente en el navegador.</p></div>
+              <div class="mini"><h4>Como comparto con estudiantes</h4><p>Comparte el enlace publicado o el archivo ContaExpand_Edu.html.</p></div>
+            </div>
+            <div class="panel-actions">
+              <button id="printManual" class="ghost">Imprimir manual (PDF)</button>
+            </div>
+          </div>
+        </div>
+      `;
+      const pm = $("printManual");
+      if (pm) pm.addEventListener("click", () => window.print());
+    }
+
     function render() {
       ensureProfile();
       $("profileName").value = activeProfile;
@@ -3048,6 +3170,7 @@
       if (activeScreen === "casos") renderCasos();
       if (activeScreen === "report") renderReport();
       if (activeScreen === "bibliography") renderBibliography();
+      if (activeScreen === "manual") renderManual();
       const exportBtn = $("exportData");
       if (exportBtn) {
         exportBtn.addEventListener("click", () => {
@@ -3097,6 +3220,7 @@
     $("goCasos").addEventListener("click", () => setScreen("casos"));
     $("goReport").addEventListener("click", () => setScreen("report"));
     $("goBibliography").addEventListener("click", () => setScreen("bibliography"));
+    $("goManual").addEventListener("click", () => setScreen("manual"));
 
     // Al cargar, los roles elevados requieren autenticarse de nuevo:
     // se inicia siempre como estudiante hasta ingresar la clave.

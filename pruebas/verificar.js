@@ -71,6 +71,7 @@ const tests = `
   T('Panel', () => { activeScreen = 'dashboard'; render(); });
   T('Glosario + busqueda', () => { activeScreen = 'glossary'; glossaryQuery = 'control'; render(); glossaryQuery = ''; });
   T('Bibliografia', () => { activeScreen = 'bibliography'; render(); });
+  T('Manual de usuario', () => { activeScreen = 'manual'; render(); });
   ['todos','u1','u2','u3','u4','integrador'].forEach(f => T('Casos: ' + f, () => { activeScreen = 'casos'; casoFilter = f; renderCasos(); }));
   T('Reporte (estudiante)', () => { activeRole = 'estudiante'; activeScreen = 'report'; render(); });
   T('Reporte (docente)', () => { activeRole = 'docente'; elevated = true; activeScreen = 'report'; render(); });

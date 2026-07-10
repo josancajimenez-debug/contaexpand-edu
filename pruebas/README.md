@@ -15,9 +15,9 @@ node pruebas/verificar.js
 
 o doble clic en **`verificar-pruebas.bat`** (en la raiz del proyecto).
 
-## Que valida (49 comprobaciones)
+## Que valida (50 comprobaciones)
 - Que **todas las pantallas** rendericen sin error: Panel, Glosario (con busqueda),
-  Bibliografia, Casos (los 6 filtros) y Reporte para los 3 roles.
+  Bibliografia, Manual de usuario, Casos (los 6 filtros) y Reporte para los 3 roles.
 - Las **4 unidades** con sus **6 pestanas** cada una (Contenido, Ejemplo,
   Ejercicios, Simulador, Autoevaluacion, Notas).
 - Exportaciones (CSV/JSON) e impresion de unidad.
