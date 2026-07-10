@@ -12,7 +12,7 @@ suba y se publique automaticamente**.
 
 1. Entra a https://github.com e inicia sesion (o crea una cuenta gratis).
 2. Arriba a la derecha: **+** -> **New repository**.
-3. Nombre sugerido: `contaexpand-edu`.
+3. Nombre sugerido: `eeff-consolidados`.
 4. Deja el resto por defecto. **Publico** (necesario para Pages gratis).
    - NO marques "Add a README" (ya tenemos archivos).
 5. **Create repository**.
@@ -23,7 +23,7 @@ En la carpeta del proyecto, abre una terminal (o Git Bash) y ejecuta,
 reemplazando `TU-USUARIO`:
 
 ```
-git remote add origin https://github.com/TU-USUARIO/contaexpand-edu.git
+git remote add origin https://github.com/TU-USUARIO/eeff-consolidados.git
 git branch -M main
 git push -u origin main
 ```
@@ -38,7 +38,7 @@ navegador o el Administrador de Credenciales de Windows). Acepta.
 3. **Branch**: `main` y carpeta `/ (root)`. **Save**.
 4. Espera 1-2 minutos. Aparecera el enlace publico, del tipo:
 
-   `https://TU-USUARIO.github.io/contaexpand-edu/`
+   `https://TU-USUARIO.github.io/eeff-consolidados/`
 
 Ese es el enlace que compartes con los estudiantes. Funciona en PC y movil
 (pueden usar "Agregar a pantalla de inicio").

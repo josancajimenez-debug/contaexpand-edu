@@ -28,7 +28,7 @@ Write-Host "Sesion de GitHub verificada." -ForegroundColor Green
 Write-Host "`n== 2/4  Creando el repositorio y subiendo el proyecto ==" -ForegroundColor Cyan
 & git remote get-url origin 2>$null | Out-Null
 if ($LASTEXITCODE -ne 0) {
-  & $gh repo create contaexpand-edu --public --source=. --remote=origin --push
+  & $gh repo create eeff-consolidados --public --source=. --remote=origin --push
   if ($LASTEXITCODE -ne 0) {
     Write-Host "`nNo se pudo crear o subir el repositorio. Revisa el mensaje de arriba." -ForegroundColor Red
     return
