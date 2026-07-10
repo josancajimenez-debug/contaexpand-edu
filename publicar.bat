@@ -1,6 +1,6 @@
 @echo off
 REM ============================================================
-REM  Sube a GitHub todos los cambios de ContaExpand Edu.
+REM  Sube a GitHub todos los cambios de EEFF Consolidados.
 REM  Doble clic para publicar. GitHub Pages se actualiza solo.
 REM ============================================================
 cd /d "%~dp0"

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 /*
- * Suite de regresion para ContaExpand Edu (app de un solo archivo HTML).
+ * Suite de regresion para EEFF Consolidados (app de un solo archivo HTML).
  * Ejecuta el JavaScript de la app dentro de stubs de DOM/localStorage y valida
  * pantallas, pestanas, calculos de simuladores y cuadre de asientos.
  *
@@ -53,10 +53,10 @@ global.URL = { createObjectURL: () => 'blob:x', revokeObjectURL: () => {} };
 global.Blob = function () {};
 
 // ----------------------- Cargar la app -----------------------
-const htmlPath = path.join(__dirname, '..', 'ContaExpand_Edu.html');
+const htmlPath = path.join(__dirname, '..', 'EEFF_Consolidados.html');
 const html = fs.readFileSync(htmlPath, 'utf8');
 const match = html.match(/<script>([\s\S]*)<\/script>/);
-if (!match) { console.error('No se encontro <script> en ContaExpand_Edu.html'); process.exit(1); }
+if (!match) { console.error('No se encontro <script> en EEFF_Consolidados.html'); process.exit(1); }
 const appJs = match[1];
 
 // ----------------------- Pruebas (mismo ambito que la app) -----------------------
@@ -124,7 +124,7 @@ const tests = `
 `;
 
 try {
-  vm.runInThisContext(appJs + '\n' + tests, { filename: 'ContaExpand_Edu.inline.js' });
+  vm.runInThisContext(appJs + '\n' + tests, { filename: 'EEFF_Consolidados.inline.js' });
 } catch (e) {
   console.error('ERROR al cargar/ejecutar la app:', e.stack || e.message);
   process.exit(1);

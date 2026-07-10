@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ContaExpand Edu: herramienta educativa de contabilidad avanzada con enfoque NIIF completas (Costa Rica). Expansion empresarial, agencias y sucursales, subsidiarias y empresas asociadas, con ejemplos, simuladores, casos resueltos y autoevaluacion.">
+  <meta name="description" content="EEFF Consolidados: herramienta educativa de contabilidad avanzada con enfoque NIIF completas (Costa Rica). Expansion empresarial, agencias y sucursales, subsidiarias y empresas asociadas, con ejemplos, simuladores, casos resueltos y autoevaluacion.">
   <meta name="theme-color" content="#0b2930">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>&#128202;</text></svg>">
-  <title>ContaExpand Edu</title>
+  <title>EEFF Consolidados</title>
   <style>
     :root {
       --ink: #0f172a;
@@ -2816,7 +2816,7 @@
           (pr.rubricNotes || "").replace(/\r?\n/g, " ")
         ].map(csvCell).join(","));
       });
-      downloadBlob("﻿" + lines.join("\r\n"), "contaexpand_grupo.csv", "text/csv;charset=utf-8");
+      downloadBlob("﻿" + lines.join("\r\n"), "eeff_consolidados_grupo.csv", "text/csv;charset=utf-8");
     }
 
     function exportGroupJson() {
@@ -2835,7 +2835,7 @@
           actualizado: pr.updatedAt || ""
         };
       });
-      downloadBlob(JSON.stringify(data, null, 2), "contaexpand_grupo.json", "application/json");
+      downloadBlob(JSON.stringify(data, null, 2), "eeff_consolidados_grupo.json", "application/json");
     }
 
     function downloadBlob(content, filename, type) {
@@ -3046,7 +3046,7 @@
       $("screenSubtitle").textContent = "Guia paso a paso para estudiantes y docentes.";
       $("manualScreen").innerHTML = `
         <div class="panel">
-          <div class="panel-head"><h3>1. Que es ContaExpand Edu</h3><span class="badge">Vision general</span></div>
+          <div class="panel-head"><h3>1. Que es EEFF Consolidados</h3><span class="badge">Vision general</span></div>
           <div class="panel-body">
             <p class="info">Herramienta educativa interactiva para el curso de Contabilidad Avanzada. Cubre cuatro unidades bajo NIIF completas: expansion empresarial, agencias y sucursales, inversion en subsidiarias y empresas asociadas. Funciona sin internet y guarda tu avance en el propio navegador (localStorage).</p>
             <div class="unit-grid">
@@ -3146,7 +3146,7 @@
               <div class="mini"><h4>Perdi mi avance</h4><p>Se guarda por navegador y equipo. Si limpiaste datos o cambiaste de equipo, restaura desde un respaldo exportado.</p></div>
               <div class="mini"><h4>No suma el avance</h4><p>Verifica que marcaste todos los conceptos, abriste el ejemplo, hiciste los ejercicios, el simulador y la autoevaluacion.</p></div>
               <div class="mini"><h4>Puedo usarlo sin internet</h4><p>Si. Es un unico archivo HTML; funciona abriendolo directamente en el navegador.</p></div>
-              <div class="mini"><h4>Como comparto con estudiantes</h4><p>Comparte el enlace publicado o el archivo ContaExpand_Edu.html.</p></div>
+              <div class="mini"><h4>Como comparto con estudiantes</h4><p>Comparte el enlace publicado o el archivo EEFF_Consolidados.html.</p></div>
             </div>
             <div class="panel-actions">
               <button id="printManual" class="ghost">Imprimir manual (PDF)</button>
@@ -3174,7 +3174,7 @@
       const exportBtn = $("exportData");
       if (exportBtn) {
         exportBtn.addEventListener("click", () => {
-          downloadBlob(JSON.stringify(store, null, 2), "contaexpand_datos_locales.json", "application/json");
+          downloadBlob(JSON.stringify(store, null, 2), "eeff_consolidados_datos_locales.json", "application/json");
         });
       }
       const passBtn = $("changePassword");

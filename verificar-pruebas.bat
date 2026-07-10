@@ -1,5 +1,5 @@
 @echo off
-REM Ejecuta la suite de pruebas de regresion de ContaExpand Edu.
+REM Ejecuta la suite de pruebas de regresion de EEFF Consolidados.
 cd /d "%~dp0"
 where node >nul 2>nul
 if errorlevel 1 (

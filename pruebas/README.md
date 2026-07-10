@@ -1,6 +1,6 @@
-# Pruebas de regresion — ContaExpand Edu
+# Pruebas de regresion — EEFF Consolidados
 
-Valida la aplicacion (un solo archivo `ContaExpand_Edu.html`) **sin navegador**,
+Valida la aplicacion (un solo archivo `EEFF_Consolidados.html`) **sin navegador**,
 ejecutando su JavaScript dentro de stubs de DOM/localStorage con Node.js.
 
 ## Requisito
